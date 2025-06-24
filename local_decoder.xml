@@ -1,0 +1,21 @@
+<decoder name="view-reconnect">
+  <prematch>View-</prematch>
+</decoder>
+
+<decoder name="view-reconnect">
+  <parent>view-reconnect</parent>
+  <regex>(\.+) View\p(\.+) </regex>
+  <order>hostname,programName</order>
+</decoder>
+
+<decoder name="view-reconnect">
+  <parent>view-reconnect</parent>
+  <regex>\pView@\d+ Severity="(\.+)" Module="(\.+)" EventType="(\.+)" UserSid="(\.+)" UserDisplayName="(\.+)" Desktop="(\.+)" DesktopDisplayName="(\.+)" PoolId="(\.+)" MachineId="(\.+)" MachineDnsName="(\.+)" SessionType="(\.+)"\p</regex>
+  <order>severity,module,event_type,user_sid,user_display,desktop,desktop_display,pool_id,machine_id,machine_dns,session_type</order>
+</decoder>
+
+<decoder name="view-reconnect">
+  <parent>view-reconnect</parent>
+  <regex>User (\.+) has reconnected to machine (\.+)</regex>
+  <order>view_user,machine</order>
+</decoder>

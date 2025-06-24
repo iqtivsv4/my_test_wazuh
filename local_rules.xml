@@ -1,0 +1,8 @@
+<group name="view,view-reconnect,agent-reconnected,custom">
+  <rule id="100101" level="5">
+    <decoded_as>view-reconnect</decoded_as>
+    <field name="event_type">AGENT_RECONNECTED</field>
+    <description>VDI reconnect detected - User $(view_user) reconnected to $(machine)</description>
+    <group>vdi,agent,custom</group>
+  </rule>
+</group>
